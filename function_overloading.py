@@ -4,7 +4,7 @@ class wrk_name:
 		self.val=10
 	def change_val(self):
 		# print(self)
-	# 	self.val=20
+		self.val=20
 	# def switch_obj(self,obj):
 	# 	temp=self
 	# 	print("self",self)
@@ -14,7 +14,7 @@ class wrk_name:
 	# 	obj=temp
 	def __add__(self,obj1):
 		print(self)
-		return self.val+obj1.val
+		return self.val-obj1.val
 	@classmethod
 	def switch_obj(cls,obj,obj1):
 		temp=obj
@@ -42,7 +42,14 @@ print("obj1",obj1)
 
 print("Switching obj")
 
-obj1.switch_obj(obj)
+# obj1.switch_obj(obj)
+# print("obj",obj)
+# print("obj1",obj1)
+# print("obj",obj.val)
+# print("obj1",obj1.val)
+
+
+obj,obj1=wrk_name.switch_obj(obj,obj1)
 print("obj",obj)
 print("obj1",obj1)
 print("obj",obj.val)

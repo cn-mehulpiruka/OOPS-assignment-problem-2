@@ -4,17 +4,26 @@ class wrk_name:
 		self.val=10
 	def change_val(self):
 		# print(self)
-		self.val=20
-	def switch_obj(self,obj):
-		temp=self
-		print("self",self)
-		print("temp",temp)
-		print("obj",obj,"\n")
-		self=obj
-		obj=temp
+	# 	self.val=20
+	# def switch_obj(self,obj):
+	# 	temp=self
+	# 	print("self",self)
+	# 	print("temp",temp)
+	# 	print("obj",obj,"\n")
+	# 	self=obj
+	# 	obj=temp
 	def __add__(self,obj1):
 		print(self)
 		return self.val+obj1.val
+	@classmethod
+	def switch_obj(cls,obj,obj1):
+		temp=obj
+		print("obj",obj)
+		print("temp",temp)
+		print("obj1",obj1,"\n")
+		obj=obj1
+		obj1=temp
+		return obj,obj1
 print("intialising obj")
 obj=wrk_name()
 print("obj",obj.val)

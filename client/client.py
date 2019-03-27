@@ -54,8 +54,11 @@ class publisher(client):
 		self.inventories=[]
 	def create_publisher(self,url_,flight_period_,name_,tax_entity_="Coporate",tax_id_no_=None):
 		self.name=name_
-		if tax_entity=='Coporate':
-			company=company()
+
+		if tax_entity_=='Coporate':
+			print(tax_entity_)
+			# print("")
+
 		else:
 			tax_entity='Indiviual'
 		self.tax_id_no=tax_id_no_
@@ -98,10 +101,14 @@ class advertiser(client):
 		# self.total_amountbilled=0
 		self.orders=[]
 	
-	def create_new_advertiser(self,name_,flight_period_=1,tax_entity_="Coporate",tax_id_no_=None):
+	def create_advertiser(self,name_,flight_period_=1,tax_entity_="Coporate",tax_id_no_=None):
 		self.name=name_
-		if tax_entity=='Coporate':
-			company=company()
+		print(tax_entity_)
+
+		if tax_entity_=='Coporate':
+			# company=company()
+			print(tax_entity_)
+
 		else:
 			tax_entity='Indiviual'
 		self.tax_entity=tax_entity_

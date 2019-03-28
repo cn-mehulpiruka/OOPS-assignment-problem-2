@@ -10,3 +10,4 @@ Ex:
     Company have properties like, emp_count, profits, clients, branches etc.
     Employee include pay, hr_management, projects etc.
     Clients include projects, teams, billing, etc.
+    gg

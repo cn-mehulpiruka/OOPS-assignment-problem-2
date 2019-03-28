@@ -22,10 +22,15 @@ class client:
 
 	@classmethod
 	def publish(cls,publishers,advertiser):
+		if len(advertiser.orders) == 0:
+			print("No orders their for the Advertiser")
+			return 
 		for order in advertiser.orders:
 			flag=False
 			if d.date(order.start_date)<today and today< d.date(order.end_date) and order.status==True:
 				for publisher in publishers:
+					if len(publisher.inventories)==0:
+						break
 					for inventory in publisher.inventories:
 						 if inventory.price<order.amountpaid and inventory.status==True:
 						 	print("Published")

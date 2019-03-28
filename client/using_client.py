@@ -50,6 +50,12 @@ while choice >0 and choice<10:
 		print("Choose a valid option:")
 	if choice==1:
 		create_client()
+	if choice==2:
+		print("1) View All CLinets\n2) View Publisher\n 3) View Advertisers")
+		ch=int(input())
+		if ch==1:
+			view_clients(Publisher,Advertisers)
+		view_clients()
 	elif choice==5:
 		exit()
 

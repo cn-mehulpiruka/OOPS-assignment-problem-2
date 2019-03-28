@@ -9,9 +9,7 @@ class Employer:
 		self.alt_no = ''
 		self.designation = ''
 		self.branch = ''
-		self.team_manager = ''
-		self.salary = ''
-		
+		self.team_manager = ''		
 	def set_empid(self, empid):
 		self.empid = empid
 		
@@ -41,9 +39,6 @@ class Employer:
 		
 	def set_team_manager(self, team_manager):
 		self.team_manager = team_manager
-		
-	def set_salary(self, salary):
-		self.salary = salary
 		
 	def get_empid(self):
 		return self.empid
@@ -75,9 +70,6 @@ class Employer:
 	def get_team_manager(self):
 		return self.team_manager
 		
-	def get_salary(self):
-		return self.salary 
-		
 	def __str__(self):
 	    return 'EmpID: '   +   self.empid  +   \
                '\nName: '   +   self.name   +   \
@@ -91,11 +83,37 @@ class Employer:
                '\nTeam Manager: '   +   self.team_manager   +   \
                '\nSalary: ' +   self.salary
 class Trainee(Employer):
-	def__init__(self,stifend,duration):
+	def __init__(self,stifend,duration):
 		super().__init__()
-
 		self.stifend = stifend
 		self.duration = duration
+	def set_stifend(self,stifend):
+		self.stifend = stifend
+	def set_duration(self,duration):
+		self.duration = duration
+	def get_stifend(self):
+		return self.stifend
+	def get_duration(self):
+		return self.duration
+	def __str__(self):
+	    return 'stifend: '   +   self.stifend  +   \
+               '\nduration: '   +   self.duration
+class permanent(Employer):
+	def __init__(self,salary,contract):
+		super().__init__()
+		self.salary = salary
+		self.contract = contract
+	def set_salary(self,salary):
+		self.salary = salary
+	def set_contract(self,contract):
+		self.contract = contract
+	def get_salary(self):
+		return self.salary
+	def get_contract(self):
+		return self.contract
+	def __str__(self):
+	    return 'salary: '   +   self.salary +   \
+              '\ncontract: '   +   self.contract
 class department:
 	def __init__(self,depname,depid,project_id):
 		self.depname = depname
@@ -116,7 +134,6 @@ class department:
 	def __str__(self):
 	    return 'depname: '   +   self.depname  +   \
                '\ndepid: '   +   self.depid   +   \
-               '\nproject_id: '    +   self.project_id    +   \
-               
+               '\nproject_id: '    +   self.project_id 
 
 		

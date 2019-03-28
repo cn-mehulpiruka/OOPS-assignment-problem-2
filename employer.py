@@ -135,5 +135,21 @@ class department:
 	    return 'depname: '   +   self.depname  +   \
                '\ndepid: '   +   self.depid   +   \
                '\nproject_id: '    +   self.project_id 
-
+class Hr_department(Employer):
+	def __init__(self,num_of_recruitment,finance_description):
+		super().__init__()
+		self.num_of_recruitment = num_of_recruitment
+		self.finance_descriptiom = finance_description
+	def set_num_of_recruitment(self,num_of_recruitment):
+		self.num_of_recruitment = num_of_recruitment
+	def set_finance_description(self,finance_description):
+		self.finance_description = finance_description
+	def get_num_of_recruitment(self):
+		return num_of_recruitment
+	def get_finance_description(self):
+		return finance_description
+	def __str__(self):
+	    return 'num_of_recruitment: '   +   self.num_of_recruitment +   \
+               '\nfinance_description: '   +   self.finance_description
+          
 		

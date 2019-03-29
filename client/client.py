@@ -73,7 +73,8 @@ def create_order():
 			cnt+=1
 	advertiser_id=int(input("Enter The advertiser id for which you want to create order: "))
 	order_4_advertiser= (Advertiser[advertiser_id-1])
-	start_date_=input("Enter start date for the order : (press 1 for today) (YYYY-MM-DD)")
+	print("REMEBER THE DATE OF ORDER SHOULD BE ATLEAST A DAY OLD: ")
+	start_date_=input("Enter start date for the order : (press 1 for today) (YYYY-MM-DD)\n ")
 	if start_date_=="1":
 		start_date_=str(today)
 	print(start_date_)

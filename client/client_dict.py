@@ -26,7 +26,7 @@ class client:
 	@classmethod
 	def publish(cls,publishers,advertiser):
 		if len(advertiser.orders) == 0:
-			print("No orders their for the Advertiser")
+			print("No orders there for the Advertiser",advertiser.name)
 			return 
 		for order in advertiser.orders:
 			flag=False
@@ -37,7 +37,7 @@ class client:
 					if len(publisher.inventories)==0:
 						break
 					for inventory in publisher.inventories:
-						print(inventory.price," ",order.amountpaid)
+						print("Comparing ",inventory.price," ",order.amountpaid)
 						if float(inventory.price)<float(order.amountpaid) and inventory.status==True:
 						 	print("Published")
 						 	amount=client.billing(inventory,order)
@@ -80,8 +80,10 @@ class publisher(client):
 		new_invent=inventory.create_new_inventory(size_,price_,status_)
 		self.inventories.append(new_invent)
 	def earned(self,amount_):
-		print("earned",self)
+		print("earned",self.total_amountbilled,"\t",amount_)
 		self.total_amountbilled+=amount_
+		print("earned",self.total_amountbilled)
+
 
 
 class inventory:

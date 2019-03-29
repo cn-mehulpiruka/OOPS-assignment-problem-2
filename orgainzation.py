@@ -8,7 +8,7 @@ def welcome():
 		pass
 	elif ch==3:
 		print("Reaady to go with the client dashboard??? ")
-		print(dir(c))
+		# print(dir(c))
 		c.client_working()
 	else:
 		exit()

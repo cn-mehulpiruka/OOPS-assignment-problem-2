@@ -1,5 +1,6 @@
 import client.client_dict as c
 import datetime as d
+today = d.date.today()
 Advertiser=[]
 Publisher=[]
 
@@ -16,16 +17,16 @@ def create_client():
 			url_=input("Enter url of the Client ")
 			p=c.publisher()
 			p.create_publisher(url_,flight_period_,name_,tax_entity_,tax_id_no_)
-			print(dir(c.publisher))
+			# print(dir(c.publisher))
 			Publisher.append(p)
-			print(len(Publisher))
+			print("Total: ",len(Publisher))
 
 		else:
 			print(dir(c.advertiser))
 			a=c.advertiser()
 			a.create_advertiser(name_,flight_period_,tax_entity_,tax_id_no_)
 			Advertiser.append(a)
-			print(len(Advertiser))
+			print("Total: ", len(Advertiser))
 
 def view_clients(clients):
 
@@ -56,7 +57,7 @@ def publish():
 		# print(Advertiser[publish_advertiser_id-1])
 		c.client.publish(Publisher,Advertiser[publish_advertiser_id-1])
 def create_addons():
-	ch=int(input("What do want to create ?\n 1) Inventory \n 2) Order"))
+	ch=int(input("What do want to create ?\n 1) Inventory \n 2) Order\n :: "))
 	if ch==1:
 		create_inventory()
 	elif ch==2:
@@ -81,7 +82,7 @@ def create_order():
 	amountpaid_=float(input("Enter amount advertiser would be paying : (enter amount in 00.00): "))
 	ch=(input("Choose your desire billing period\n 1) Day \n 2) Monthly \n 3) Annually: \n"))
 	billing_period_= "Day" if  ch== "1" else  ("Monthly" if ch=="2" else "Annually" )
-	print(billing_period_)
+	# print(billing_period_)
 	if start_date_!= today and d.date(int(start_date_[0:4]),int(start_date_[5:7]),int(start_date_[8:]))< today:
 		status_=True
 	else:
@@ -116,7 +117,7 @@ def show_amoutn():
 		for advertiser in Advertiser:
 				print(cnt,"\t\t",advertiser.name)
 				cnt+=1
-	
+	print("==&&=="*20)
 	cnt=1
 	if ch==3:
 		print("Publishers ID\t\t Publishers Name")
@@ -142,7 +143,7 @@ def go_back():
 
 
 def client_working():
-	today = d.date.today()
+	
 	choice=1
 	while choice >0 and choice<10:
 		print("===="*7)

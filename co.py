@@ -11,6 +11,7 @@ class company:
 			"Conde Nast offers consumer and business-to-business magazine publication services,\n"+
 			"as well as websites and applications for mobile and tablet devices.Conde Nast serves customers in the State of New York.\n")
 	def branches(self):
+		branch=raw_input("main or content or technical\n")
 		def main_branch():
 			print("Address:-\n1 World Trade Center,\nNew York, NY 10007,\n USA\n")
 		def contentwriting_branch():
@@ -42,17 +43,13 @@ class company:
 		reader_file=csv.reader(input_file)
     		for row in reader_file:
     			print(row[2])
-co=company()
+"""co=company()
 co.name()
 co.description()
 co.emp_count()	
 co.profits()
 co.clients()
-branch=raw_input("main or content or technical\n")
-co.branches()
-
-#csvfile.close()
-#print(n)
+co.branches()"""
 
 
 

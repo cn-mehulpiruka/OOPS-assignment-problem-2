@@ -19,9 +19,9 @@ class client:
 		if order.billing_period=='Day':
 			return order.amountpaid*time_period
 		elif order.billing_period=='Monthly':
-			return (order.amountpaid//30)*time_period
+			return (order.amountpaid*time_period)*30
 		else:
-			return (order.amountpaid//365)*time_period
+			return (order.amountpaid*time_period)*365
 
 	@classmethod
 	def publish(cls,publishers,advertiser):
@@ -49,7 +49,7 @@ class client:
 						 	break
 					if flag:
 				 		break
-			if not flag:
+		if not flag:
 	 			print("Sorry no publisher avaiable now")
 
 class publisher(client):
@@ -80,9 +80,9 @@ class publisher(client):
 		new_invent=inventory.create_new_inventory(size_,price_,status_)
 		self.inventories.append(new_invent)
 	def earned(self,amount_):
-		print("earned",self.total_amountbilled,"\t",amount_)
+		print("earned","\t",amount_)
 		self.total_amountbilled+=amount_
-		print("earned",self.total_amountbilled)
+		print("New Billed",self.total_amountbilled)
 
 
 
@@ -135,8 +135,10 @@ class advertiser(client):
 		new_order.create_order(self.__advertiser_id,start_date_,end_date_,status_,amountpaid_,billing_period_)
 		self.orders.append(new_order)
 	def spent(self,amount_):
-		print("spend",self)
+		print("Currently charge ",amount_)
 		self.total_amountbilled+=amount_
+		print("New Billed",self.total_amountbilled)
+				
 
 class order:
 	__order_id=0

@@ -1,5 +1,5 @@
 import employer as emp
-def main():
+def Employer():
     n = int(input("enter the users"))
     for i in range(0,n):
         choice = int(input("enter the choice"))

@@ -4,7 +4,7 @@ def company():
 	print("Welcome to our company"+
 		"Want to know the details,Here are the available options----"+
 		"1.Name\n2.Description\n3.Banch details\n4.Number of employees\n5.Clients\n6.Average profit")
-	n=input("enter your option: ")
+	n=int(input("enter your option: "))
 	if (n==1):
 		f.name()
 	elif(n==2):

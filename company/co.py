@@ -42,7 +42,7 @@ class company:
 		input_file=open("100 Records.csv")
 		reader_file=csv.reader(input_file)
 		next(reader_file)
-    		for row in reader_file:
+		for row in reader_file:
     			print(row[2])
 """"co=company()
 co.name()
